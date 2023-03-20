@@ -46,10 +46,6 @@ DB_PORT=5432			        # порт для работы с базой данных
 ```
 docker-compose exec web python manage.py migrate
 ```
-### Для загрузки данных (опционально)
-```
-docker-compose exec web python manage.py loaddata db.json
-```
 ### Создайте пользователя
 ```
 docker-compose exec web python manage.py createsuperuser
@@ -63,33 +59,6 @@ docker-compose exec web python manage.py changepassword admin
 docker-compose exec web python manage.py collectstatic --no-input
 ```
 
-# Установка и настройки
-### Создание и активирование виртуального окружения:
-```
-python -m venv env
-```
-```
-source venv/Scripts/activate
-``` 
-### Установка зависимостей:
-```
-python -m pip install --upgrade pip
-```
-```
-pip install -r requirements.txt
-```
-### Применение миграций:
-```
-python3 manage.py migrate
-```
-### Запуск django сервера:
-```
-python manage.py runserver
-```
-# Заполнение базы данных из CSV:
-```
-python manage.py import
-```
 # Документация:
 `http://127.0.0.1:8000/redoc/`
 # Примеры запросов к API:
